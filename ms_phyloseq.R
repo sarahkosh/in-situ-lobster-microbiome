@@ -14,15 +14,13 @@ physeq
 
 map <- read.csv("map.csv")
 map <- sample_data(map)
-rownames(map) <- map$Sample #Sample should be changed to whatever column contains the sample names that are shared with your otu table
-print(map)#check that everything looks right, sometimes the format is wonky
+rownames(map) <- map$Sample 
+print(map)
 
-phyloseq_merge <- merge_phyloseq(physeq, map) #this is your phyloseq object; it should include an otu table, a taxonomy table, and a map file; if it doesn't, or if the number of samples is incorrect, something went wrong in the merge step
+phyloseq_merge <- merge_phyloseq(physeq, map)
 print(phyloseq_merge) 
 
 ####Subsetting####
-
-#this code can be used to remove taxa or specific samples from your phyloseq object
 
 phyob <- phyloseq_merge %>%  # remove cyanobacteria and mitochondrial DNA
   subset_taxa(Phylum !="Cyanobacteria"| is.na(Phylum)) %>%
@@ -147,7 +145,7 @@ min_lib <- min(sample_sums(phyob)) #find minimum number of reads in sample with 
 min_lib #3738
 #subsample
 set.seed(3)
-subhab_all <- rarefy_even_depth(phyob, sample.size = min_lib, verbose=FALSE, replace=TRUE) #randomly subsample your ASVs so that all samples have the same number
+subhab_all <- rarefy_even_depth(phyob, sample.size = min_lib, verbose=FALSE, replace=TRUE) #randomly subsample 
 subhab_all #new ps object with rarefied and subsampled ASVs 
 
 hab_pcoa_all <- ordinate(physeq = subhab_all, method ='PCoA', distance = 'bray')
