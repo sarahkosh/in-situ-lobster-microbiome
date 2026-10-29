@@ -1,0 +1,8 @@
+### Picrust2 on core community of in situ lobster samples
+
+
+conda activate picrust2
+picrust2_pipeline.py -s emb_sequences.fasta -i asv_abund_emb_core.tsv -o picrust2_out_emb -p 1
+
+
+### Continue with ANCOMBC2 and ggpicrust2 for visualizations and analysis ####
