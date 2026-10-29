@@ -1,6 +1,5 @@
 ### in situ core microbiome ###
-#Venn diagram
-setwd("/Users/jskoshak/Desktop/in_situ")
+#from community_analysis.R
 
 phyob <- readRDS("phyob.rds")
 
