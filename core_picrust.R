@@ -1,5 +1,5 @@
 ### Core Picrust ###
-# Run picrust on all calculated core communities to see how different each core function is #
+# Run picrust on all  core communities to see how functions differ#
 
 ### Make fasta file and ASV count table for Picrust analysis ###
 library(phyloseq)
@@ -8,7 +8,7 @@ library(tidyr)
 library(stringr)
 
 #load in core ps objects
-setwd("/Users/jskoshak/Desktop/in_situ")
+setwd("/Location/to/ps_objects")
 emb.core <- readRDS("emb_core90.rds")
 hem.core <- readRDS("hem_core70.rds")
 pleo.core <- readRDS("pleo_core90.rds")
