@@ -38,8 +38,6 @@ Place these in `data/`:
 | `Location` | DownEast (Maine), NH, SME [define SME] |
 | `ESD_Status` | Positive or Negative |
 
-Raw sequence reads: [add repository and accession, e.g. NCBI SRA PRJNA...].
-
 ## Usage
 
 ```r
@@ -55,10 +53,4 @@ source("02_community_analysis.R")    # writes tables to results/ and figures to 
 - **Shared taxa:** genera and ASVs present in at least two samples per group.
 - **Differential abundance:** ANCOM-BC2 at genus level (prevalence cutoff 0.1, alpha 0.05, sensitivity analysis on). Model formulas for each comparison are specified in the script.
 
-## Requirements
 
-R [version] with phyloseq, ggplot2, dplyr, tidyr, tibble, vegan, ggpubr, ANCOMBC, VennDiagram, Biostrings. Package versions used are recorded in `results/session_info.txt` after a run.
-
-## Contact
-
-Sarah Koshak, PhD
